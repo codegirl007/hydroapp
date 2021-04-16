@@ -3,4 +3,8 @@ main {
     width: auto;
     height: 80vh;
     margin: 1rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0.4rem 0.4rem 0.7rem #888888;
+    padding: 0.2rem;
 }

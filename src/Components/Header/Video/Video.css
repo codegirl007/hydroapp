@@ -1,0 +1,8 @@
+
+.video-container{
+    width: 20%;
+    height: 100%;
+    position: relative;
+    background: url('./hydro-header.jpg') no-repeat center/cover;
+    border-radius: 0.4rem;    
+}
