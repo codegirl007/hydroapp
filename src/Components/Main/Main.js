@@ -1,25 +1,73 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styled from 'styled-components';
 import { Sensors } from './Sensors/Sensors';
 import { Actuators } from './Actuators/Actuators';
 
+
+
 const MainPart = styled.main`
     width: auto;
-    height: 80vh;
-    margin: 1rem;
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;   
     `
 
-export const Main = () => {
- 
-   
+const Div = styled.div`
+    width: auto;
+    margin-top: 1rem;
+    display: flex;
+    margin-left: 0.3rem;
+    `
 
-    return (
-        <MainPart>
-            <Sensors />
-            <Actuators />
-        </MainPart>              
-      )
+const Button = styled.button `
+    height: 5rem;
+    width: 20rem;
+    font-size: 2.7rem;
+    font-weight: bold;
+    border-radius:  1rem 1rem 0rem 0rem;    
+    border-bottom: '#438F00';
+    margin-right: 0.3rem;
+    cursor: pointer;
+    outline: none;
+    `
+
+
+export const Main = (props) => {
+  const {sensorsActuatorsToggle} = props;
+  const [sensorsVisible, setSensorsVisible] = useState(true);
+  const [actuatorsVisible, setActuatorsVisible] = useState(false);
+  
+  const activeButton = { backgroundColor: '#8fdb3d', 
+                         color: '#000000',
+                         borderLeft: '1px solid #8fdb3d',
+                         borderBottom: '#438F00'           
+  };
+  const notActiveButton = { backgroundColor: '#C8C8C8',
+                            color: '#FFFFFF'
+  };
+
+  const onShowSensors = () => {
+    setSensorsVisible(true);
+    setActuatorsVisible(false);
+    sensorsActuatorsToggle('sensors')
+  };
+
+  const onShowActuators = () => {
+    setActuatorsVisible(true);
+    setSensorsVisible(false);
+    sensorsActuatorsToggle('actuators')
+  };
+
+  return (
+    <MainPart>
+      <Div>
+        <Button onClick={onShowSensors} style={sensorsVisible ? activeButton: notActiveButton }>Sensors</Button>
+        <Button onClick={onShowActuators} style={actuatorsVisible ? activeButton: notActiveButton }>Actuators</Button>
+      </Div>
+      {sensorsVisible && <Sensors/ > }
+      {actuatorsVisible && <Actuators /> } 
+    </MainPart>
+  );
 }
 
-  

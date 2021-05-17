@@ -9,19 +9,12 @@ const CVDiv = styled.div`
     height: 100%;
     border-radius: 0.4rem;
     box-shadow: 0.4rem 0.4rem 0.7rem #888888;
-    background-color: #ccff9a;
+    background-color: #8fdb3d;
     border: 0.15rem solid #A0A0A0;
     padding: 0.5rem;
     position: relative;
     `
-const Img = styled.img`
-    width: 50%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    `
+
 const H2 = styled.h2`
     margin-top: 0.5rem;
     font-size: 1.3rem;
@@ -30,30 +23,29 @@ const H2 = styled.h2`
 
 const Wrapper = styled.div`
     position: absolute;
-    left: 32%;
-    bottom: 20%;
+    left: 25%;
+    bottom: 15%;
     margin: 0.5rem;
     display: flex;
     align-items: flex-start;
     `
 const Purpose = styled.div`
-    font-size: 2.5rem; 
-  
+    font-size: 2.8rem; 
     `
 const PumpImg = styled.img`
-    max-width: 50%;
+    max-width: 28%;
     max-height: auto;
     position: absolute;
-    top: 17%;
-    left: 10%;
+    top: 9%;
+    left: 12%;
 
     `
 const DropImg = styled.img`
-    max-width: 50%;
+    max-width: 28%;
     max-height: auto;
     position: absolute;
     top: 48%;
-    left: 25%;
+    left: 20%;
 `
 
 export const ActuatorPumpsCV = () => {

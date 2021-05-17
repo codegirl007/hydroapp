@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import img from './header-video.jpg';
 
 const VideoContainer = styled.div`
-      width: calc(20vh*(16/9));
+      aspect-ratio: 16/9 ;
       height: 100%;
       position: relative;
       background: url(${img}) no-repeat center/cover;

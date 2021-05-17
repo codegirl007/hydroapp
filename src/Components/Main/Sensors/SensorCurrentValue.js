@@ -8,13 +8,13 @@ const CVDiv = styled.div`
     height: 100%;
     border-radius: 0.4rem;
     box-shadow: 0.4rem 0.4rem 0.7rem #888888;
-    background-color: #F0F0F0;
+    background-color: #8fdb3d;
     border: 0.15rem solid #A0A0A0;
     padding: 0.5rem;
     position: relative;
     `
 const Img = styled.img`
-    width: 50%;
+    width: 45%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -22,8 +22,9 @@ const Img = styled.img`
     transform: translate(-50%, -50%); 
     `
 const H2 = styled.h2`
-    margin-top: 1.5rem;
-    font-size: 1.3rem;
+    margin-top: 0.8rem;
+    font-size: 1.8rem;
+    text-align: right;
     `
 
 const Wrapper = styled.div`

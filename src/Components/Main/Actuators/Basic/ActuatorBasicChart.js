@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ApexChart } from '../../../../Data/ApexChart';
 
 const ActuatorChartContainer = styled.div`
     width: 100%;
@@ -19,10 +20,18 @@ export const ActuatorBasicChart = () => {
 
     return (
           <>
-            <ActuatorChartContainer style={{gridColumn: "1/2", gridRow: "2/3" }}></ActuatorChartContainer>
-            <ActuatorChartContainer style={{gridColumn: "2/3", gridRow: "2/3" }}></ActuatorChartContainer>
-            <ActuatorChartContainer style={{gridColumn: "3/4", gridRow: "2/3" }}></ActuatorChartContainer>
-            <ActuatorChartContainer style={{gridColumn: "4/5", gridRow: "2/3" }}></ActuatorChartContainer>
+            <ActuatorChartContainer style={{gridColumn: "1/2", gridRow: "2/3" }}>
+              <ApexChart strokeColor="#8fdb3d" fillColor="#8fdb3d"/>
+            </ActuatorChartContainer>
+            <ActuatorChartContainer style={{gridColumn: "2/3", gridRow: "2/3" }}>
+              <ApexChart strokeColor="#8fdb3d" fillColor="#8fdb3d"/>
+            </ActuatorChartContainer>
+            <ActuatorChartContainer style={{gridColumn: "3/4", gridRow: "2/3" }}>
+              <ApexChart strokeColor="#8fdb3d" fillColor="#8fdb3d"/>
+            </ActuatorChartContainer>
+            <ActuatorChartContainer style={{gridColumn: "4/5", gridRow: "2/3" }}>
+              <ApexChart strokeColor="#8fdb3d" fillColor="#8fdb3d"/>
+            </ActuatorChartContainer>
           </>
 
                  

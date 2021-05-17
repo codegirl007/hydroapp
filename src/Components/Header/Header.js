@@ -8,29 +8,20 @@ import img from './header-background.jpg';
 const Headers = styled.div`
   background: url(${img}) repeat center/cover;
   width: auto;
-  height: 20vh;
-  margin: 1rem 1rem 0 1rem;
+  margin-bottom: 1rem;
+  height: 25rem;
   border-radius: 0.4rem;
   overflow: hidden;
   box-shadow: 0.4rem 0.4rem 0.7rem #888888;
   position: relative;
   padding: 0.4%;
   z-index: -100;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(255,255,255, 0.3);
-    z-index: -99;
 }
 `
 
 const H1 = styled.h1`
   float: right;
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   background-color: rgba(255,255,255, 0.8);
   padding: 0.5%;
   border-radius: 0.4rem;
@@ -42,14 +33,26 @@ const H1 = styled.h1`
   }
 `
 
-export const Header = () => {
+const H3 = styled.h3`
+   text-transform: uppercase;
+   font-size: 4rem;
+   color: #000000;
+   font-weight: 700;
+   position: absolute;
+   top: 50%;  
+   left: 50%; 
+   transform: translate(-50%, -50%);
+`
+
+export const Header = (props) => {
  
-   
+   const { toggleHeading } = props;
 
     return (
         <Headers>
             <Video />
             <Clock />
+            <H3>{toggleHeading}</H3>
             <H1>Hydroponic Project</H1>
         </Headers>              
       )

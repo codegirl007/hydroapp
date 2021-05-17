@@ -6,7 +6,7 @@ import { ActuatorBasicCV } from './ActuatorBasicCV';
 
 const ActuatorsBasicContainer = styled.div`
       grid-column: 1/6;
-      grid-row: 2/3;
+      grid-row: 1/2;
       height: 100%;
       width: 100%;
       display: grid;

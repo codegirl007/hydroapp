@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-
 const CurrentTime = styled.h3`
     font-size: 3rem;
+    font-family: 'Roboto Mono', monospace;
     color: white;
     float: left;
     text-align: left;
@@ -52,7 +51,7 @@ class Clock extends React.Component {
       const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     return (      
           <CurrentTime> {days[this.state.day]} {this.state.time}<br/> 
-          <CurrentDate> {months[this.state.month]} {this.state.date}, {this.state.year} </CurrentDate>
+            <CurrentDate> {months[this.state.month]} {this.state.date}, {this.state.year} </CurrentDate>
           </CurrentTime>      
       )
     }
