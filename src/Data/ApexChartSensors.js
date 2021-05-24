@@ -1,4 +1,3 @@
-import { randomNormal } from 'd3-random';
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import styled from 'styled-components';
@@ -8,8 +7,12 @@ const Div = styled.div`
    height: 100%;
    padding: 0;
    margin: 0;
+   border: 1px solid #888888;
+   border-radius: 0.4rem;   
+   background-color: white    
 `
-export class ApexChart extends React.Component {
+
+export class ApexChartSensors extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,26 +26,26 @@ export class ApexChart extends React.Component {
           toolbar: {
             show: false
           },
+          animations: {
+            enabled: true,
+            easing: 'linear',
+            dynamicAnimation: {
+              speed: 1000
+            }
+          },
           type: 'line',
           zoom: {
             enabled: false
-          },
-          fontFamily: 'Montserrat',
-          fontWeight: 'normal',          
+          },        
         },
-        colors: [this.props.fillColor],
+        colors: ['#76C224'],
         dataLabels: {
           enabled: false
         },
         stroke: {
           curve: 'smooth',
-          colors: [this.props.strokeColor],
-          width: 3
-        },
-        title: {
-          text: this.props.name,
-          align: 'left',
-          
+          colors: ['#76C224'],
+          width: 2
         },
         grid: {
           row: {
@@ -62,7 +65,7 @@ export class ApexChart extends React.Component {
   render() {
     return (
       <Div>
-        <ReactApexChart options={this.state.options} series={this.state.series} type="area" height={'100%'} width={'100%'} />
+        <ReactApexChart options={this.state.options} series={this.state.series} type="area" height={'80%'} width={'100%'} />
       </Div>
     );
   }

@@ -8,60 +8,41 @@ const CVDiv = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.4rem;
-    box-shadow: 0.4rem 0.4rem 0.7rem #888888;
-    background-color: #8fdb3d;
-    border: 0.15rem solid #A0A0A0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(216,216,216,1) 100%);
+    border: 0.2rem solid #A0A0A0;
     padding: 0.5rem;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     `
 
 const H2 = styled.h2`
-    margin-top: 0.5rem;
+    position: absolute;
     font-size: 1.3rem;
-    text-align: right;
+    top: 1%;
+    right: 1%;
     `
 
-const Wrapper = styled.div`
-    position: absolute;
-    left: 25%;
-    bottom: 15%;
-    margin: 0.5rem;
-    display: flex;
-    align-items: flex-start;
-    `
 const Purpose = styled.div`
-    font-size: 2.8rem; 
+    font-size: 2.8rem;
+    color: #76C224;
+    font-weight: 500; 
+    @media (min-width: 1900px) {
+        font-size: 3rem;
+    }
     `
-const PumpImg = styled.img`
-    max-width: 28%;
-    max-height: auto;
-    position: absolute;
-    top: 9%;
-    left: 12%;
 
-    `
-const DropImg = styled.img`
-    max-width: 28%;
-    max-height: auto;
-    position: absolute;
-    top: 48%;
-    left: 20%;
-`
 
 export const ActuatorPumpsCV = () => {
-
 
     return (
 
         <>
            {ActuatorPumpsCVData.map(data => {
-               return   <CVDiv style={{gridColumn: data.gridColumn, gridRow: data.gridRow}}>
-                            <H2>{data.title}</H2>
-                            <PumpImg src='./icons/tap.png'></PumpImg>
-                            <DropImg src='./icons/drop-white.png'></DropImg>
-                            <Wrapper>                          
-                                <Purpose>{data.purpose}</Purpose>
-                            </Wrapper>
+               return   <CVDiv style={{gridArea: data.gridArea}}>
+                            <H2>Dosing Pump</H2>
+                            <Purpose>{data.purpose}</Purpose>
                         </CVDiv>
               })
             }

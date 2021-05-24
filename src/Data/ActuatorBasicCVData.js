@@ -5,28 +5,28 @@ export const ActuatorBasicCVData = [
       gridColumn: "1/2",
       gridRow: "1/2",
       title: 'Lighting',
-      image: './icons/lighting.png',
+      image: './icons/svg/bulp.svg',
       number: '50'+'%'
      },
      {
       gridColumn: "2/3", 
       gridRow:"1/2",
       title: 'Humidifier',
-      image: './icons/humidifier.png',
+      image: './icons/svg/humidifier.svg',
       number: '50'+'%'
      },
      {
       gridColumn: "3/4", 
       gridRow:"1/2",
       title: 'Ventilation',
-      image: './icons/ventilation.png',
+      image: './icons/svg/ventilation.svg',
       number: '50'+'%'
      },
      {
       gridColumn: "4/5", 
       gridRow:"1/2",
       title: 'Heater',
-      image: './icons/heater.png',
+      image: './icons/svg/heater.svg',
       number: '50'+'%'
      }  
   ]

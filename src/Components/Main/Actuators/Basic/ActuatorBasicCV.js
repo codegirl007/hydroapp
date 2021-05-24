@@ -2,39 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import { ActuatorBasicCVData } from '../../../../Data/ActuatorBasicCVData';
 
-
-
-
 const CVDiv = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.4rem;
-    box-shadow: 0.4rem 0.4rem 0.7rem #888888;
-    background-color: #8fdb3d;
-    color: white;
-    border: 0.15rem solid #A0A0A0;
-    padding: 0.5rem;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(200,200,200,1) 83%);
+    border: 0.2rem solid #A0A0A0;
     position: relative;
     display: flex;
     align-items: center;
     `
 const H2 = styled.h2`
     color: black;
-    font-size: 3rem;
     margin-left: 1rem;
+    font-size: 1.2rem;
+    @media (min-width: 1900px) {
+        font-size: 2.5rem;
+      }   
     `
-
 const Img = styled.img`
+    overflow: hidden;
+    margin-left: 1rem;
     height: 3rem;
-    width: 3rem;   
-    
+    width: 3rem;
+    @media (min-width: 1900px) {
+        height: 4rem;
+        width: 4rem
+      }   
+           
     `
 const Number = styled.div`
     color: black;
-    font-size: 3rem;
+    font-size: 1.8rem;
     position: absolute;
     top: 50%;  
-    right: 0%; 
+    right: 4%; 
     transform: translate(0, -50%);
     `
 

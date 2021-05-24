@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const CurrentTime = styled.h3`
     font-size: 3rem;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
     float: left;
     text-align: left;
@@ -12,7 +12,7 @@ const CurrentTime = styled.h3`
     padding: 0.4%;
     border-radius: 0.4rem;
     margin-left: 0.4%;
-    box-shadow: 0.3rem 0.3rem 0.6rem #202020;
+    word-spacing: 0.4rem;
     `
 
 const CurrentDate = styled.h2`
@@ -20,41 +20,39 @@ const CurrentDate = styled.h2`
     margin-top: 1rem;
 `
 
-class Clock extends React.Component {
-    constructor(props) {
-      super(props);
-      let d = new Date()
-        this.state = {
-          day: d.getDay(),
-          month: d.getMonth(),
-          date: d.getDate(),
-          year: d.getFullYear(),
-          time: d.toLocaleTimeString()
-        }
-      this.countingSecond = this.countingSecond.bind(this)
+export const Clock = () => {
+ 
+    const [currentTime, setCurrentTime] = useState({
+          day: new Date().getDay(),
+          month: new Date().getMonth(),
+          date: new Date().getDate(),
+          year: new Date().getFullYear(),
+          time: new Date().toLocaleTimeString()
+        })
+
+
+    const countingSecond = () => {    
+      setCurrentTime({
+      day: new Date().getDay(),
+      month: new Date().getMonth(),
+      date: new Date().getDate(),
+      year: new Date().getFullYear(),
+      time: new Date().toLocaleTimeString()})      
     }
-    countingSecond() {
-      let d = new Date()
-      this.setState({
-        day: d.getDay(),
-        month: d.getMonth(),
-        date: d.getDate(),
-        year: d.getFullYear(),
-        time: d.toLocaleTimeString()
-      })
-    }
-    componentWillMount() {
-      setInterval(this.countingSecond, 1000)
-    }
-    render() {
+
+    useEffect(() => {
+      setInterval(countingSecond, 1000);
+      return ()=> clearInterval(countingSecond, 1000)
+      }, [])
+
+    
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"]
       const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     return (      
-          <CurrentTime> {days[this.state.day]} {this.state.time}<br/> 
-            <CurrentDate> {months[this.state.month]} {this.state.date}, {this.state.year} </CurrentDate>
+          <CurrentTime> {days[currentTime.day]} {currentTime.time}<br/> 
+            <CurrentDate> {months[currentTime.month]} {currentTime.date}, {currentTime.year} </CurrentDate>
           </CurrentTime>      
       )
     }
-  }
   
-  export default Clock;
+  

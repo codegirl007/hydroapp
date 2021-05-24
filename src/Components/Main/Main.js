@@ -3,38 +3,37 @@ import styled from 'styled-components';
 import { Sensors } from './Sensors/Sensors';
 import { Actuators } from './Actuators/Actuators';
 
-
-
 const MainPart = styled.main`
     width: auto;
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden;   
+    overflow: hidden;  
+  
     `
 
-const Div = styled.div`
+const ButtonWrapper = styled.div`
     width: auto;
-    margin-top: 1rem;
+    height: 5vh;
     display: flex;
+    margin-top: 0.7rem;
     margin-left: 0.3rem;
     `
 
 const Button = styled.button `
-    height: 5rem;
-    width: 20rem;
-    font-size: 2.7rem;
+    width: 15rem;
+    font-size: 2rem;
     font-weight: bold;
     border-radius:  1rem 1rem 0rem 0rem;    
-    border-bottom: '#438F00';
+    border-bottom: #438F00;
     margin-right: 0.3rem;
     cursor: pointer;
     outline: none;
     `
 
 
-export const Main = (props) => {
-  const {sensorsActuatorsToggle} = props;
+export const Main = () => {
+
   const [sensorsVisible, setSensorsVisible] = useState(true);
   const [actuatorsVisible, setActuatorsVisible] = useState(false);
   
@@ -49,24 +48,24 @@ export const Main = (props) => {
 
   const onShowSensors = () => {
     setSensorsVisible(true);
-    setActuatorsVisible(false);
-    sensorsActuatorsToggle('sensors')
+    setActuatorsVisible(false);  
   };
 
   const onShowActuators = () => {
     setActuatorsVisible(true);
-    setSensorsVisible(false);
-    sensorsActuatorsToggle('actuators')
+    setSensorsVisible(false);   
   };
 
   return (
     <MainPart>
-      <Div>
+      <ButtonWrapper>
         <Button onClick={onShowSensors} style={sensorsVisible ? activeButton: notActiveButton }>Sensors</Button>
         <Button onClick={onShowActuators} style={actuatorsVisible ? activeButton: notActiveButton }>Actuators</Button>
-      </Div>
-      {sensorsVisible && <Sensors/ > }
-      {actuatorsVisible && <Actuators /> } 
+      </ButtonWrapper>
+      
+        {sensorsVisible && <Sensors/ > }
+        {actuatorsVisible && <Actuators /> } 
+      
     </MainPart>
   );
 }

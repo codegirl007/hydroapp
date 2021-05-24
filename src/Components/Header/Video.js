@@ -9,22 +9,14 @@ const VideoContainer = styled.div`
       background: url(${img}) no-repeat center/cover;
       border-radius: 0.4rem;  
       float: left;
-      box-shadow: 0.3rem 0.3rem 0.6rem #202020;
 `
-
-
 
 export const Video = () => {
  
-   
-
     return (
-        
             <VideoContainer>
             </VideoContainer>         
-        
-                 
-      )
+    )
 }
 
   

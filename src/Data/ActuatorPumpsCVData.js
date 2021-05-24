@@ -2,45 +2,27 @@
 
 export const ActuatorPumpsCVData = [
     {
-      gridColumn: "2/3",
-      gridRow: "2/3",
-      title: 'Dosing Pump',
-      image: './icons/temperature.png',
+      gridArea: '2/2/3/3',
       purpose: 'pH'
      },
      {
-      gridColumn: "2/3", 
-      gridRow:"3/4",
-      title: 'Dosing Pump',
-      image: './icons/humidity.png',
+      gridArea: '3/2/4/3',
       purpose: 'EC'
      },
      {
-      gridColumn: "2/3", 
-      gridRow:"4/5",
-      title: 'Dosing Pump',
-      image: './icons/sunlight.png',
+      gridArea: '4/2/5/3', 
       purpose: 'water'
      },
      {
-      gridColumn: "5/6", 
-      gridRow:"2/3",
-      title: 'Dosing Pump',
-      image: './icons/ph.png',
+      gridArea:'2/4/3/5',
       purpose: 'pH'
      },
      {
-      gridColumn: "5/6", 
-      gridRow:"3/4",
-      title: 'Dosing Pump',
-      image: './icons/waterflow.png',
+      gridArea: '3/4/4/5', 
       purpose: 'EC'
      },
      {
-      gridColumn: "5/6", 
-      gridRow:"4/5",
-      title: 'Dosing Pump',
-      image: './icons/ec.png',
+      gridArea: '4/4/5/5', 
       purpose: 'nutrient'
      }  
   ]

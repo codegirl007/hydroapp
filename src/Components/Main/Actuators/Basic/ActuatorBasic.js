@@ -5,20 +5,16 @@ import { ActuatorBasicCV } from './ActuatorBasicCV';
 
 
 const ActuatorsBasicContainer = styled.div`
-      grid-column: 1/6;
-      grid-row: 1/2;
+      grid-area: 1/1/2/5;
       height: 100%;
       width: 100%;
       display: grid;
       grid-template-rows: 1fr 3fr;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      gap: 0.2rem;
     `
 
-
-export const ActuatorBasic = () => {
- 
-   
+export const ActuatorBasic = () => {   
 
     return (
       <ActuatorsBasicContainer >
