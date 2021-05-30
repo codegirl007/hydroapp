@@ -11,7 +11,7 @@ border-radius: 0.4rem;
 padding: 0.5rem;
 overflow: hidden;
 display: grid;
-grid-template-rows: repeat(4, 1fr);
+grid-template-rows: 1.5fr 1fr 1fr 1fr;
 grid-template-columns: 5fr 1fr 5fr 1fr;
 gap: 0.2rem;
 align-items: center;

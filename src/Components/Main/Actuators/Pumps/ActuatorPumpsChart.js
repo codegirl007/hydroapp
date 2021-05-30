@@ -1,6 +1,7 @@
 import React from 'react';
+import { ApexChartPumps } from '../../../../Data/ApexChartPumps';
 
-import { ApexChartSensors } from '../../../../Data/ApexChartSensors';
+
 
 // const ActuatorChartContainer = styled.div`
 //     width: 100%;
@@ -19,17 +20,17 @@ export const ActuatorPumpsChart = () => {
 
     return (
           <> 
-              <ApexChartSensors style={{gridArea:"2/1/3/2"}} />
+              <ApexChartPumps style={{gridArea:"2/1/3/2"}} />
            
-              <ApexChartSensors style={{gridArea:"3/1/4/2" }}/>
+              <ApexChartPumps style={{gridArea:"3/1/4/2" }}/>
          
-              <ApexChartSensors style={{gridArea: "4/1/5/2"}}/>
+              <ApexChartPumps style={{gridArea: "4/1/5/2"}}/>
         
-              <ApexChartSensors style={{gridArea: "2/3/3/4" }}/>
+              <ApexChartPumps style={{gridArea: "2/3/3/4" }}/>
          
-              <ApexChartSensors style={{gridArea: "3/3/4/4" }}/>
+              <ApexChartPumps style={{gridArea: "3/3/4/4" }}/>
       
-              <ApexChartSensors style={{gridArea: "4/3/5/4" }}/>
+              <ApexChartPumps style={{gridArea: "4/3/5/4" }}/>
            
           </>
                  

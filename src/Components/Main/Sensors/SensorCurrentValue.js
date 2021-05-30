@@ -7,7 +7,7 @@ const CVDiv = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.4rem;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 100%);
     border: 0.2rem solid #A0A0A0;
     padding: 0.3rem;
     position: relative;
@@ -21,7 +21,7 @@ const Img = styled.img`
     transform: translate(-50%, -50%); 
     `
 const H2 = styled.h2`
-    margin-top: 0.8rem;
+    margin-top: 0.7rem;
     font-size: 1.3rem;
     text-align: right;
     @media (min-width: 1900px) {

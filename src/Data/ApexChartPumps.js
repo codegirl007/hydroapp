@@ -20,12 +20,12 @@ const styles = {
 }
 
 
-export const ApexChartActuators = () => {
+export const ApexChartPumps = () => {
 
   const seriesArray = [
     {
       data: [
-      [f, 1],
+      [1578265200000, 1],
       [1578272400000, 2],
       [1578279600000, 3],
       [1578286800000, 4],
@@ -37,7 +37,7 @@ export const ApexChartActuators = () => {
       [1578330000000, 1],
       [1578337200000, 1],
       [1578344400000, 1],
-      [1578351600000, 2]]
+      ]
     }
   ]
   
@@ -47,26 +47,30 @@ export const ApexChartActuators = () => {
                 toolbar: {
                   show: false
                 },
-                animations: {
-                  enabled: true,
-                  easing: 'linear',
-                  dynamicAnimation: {
-                    speed: 1000
-                  }
-                },
-                type: 'line',
+                type: 'bar',
                 zoom: {
-                  enabled: true
-                },        
+                  enabled: false
+                }, 
+                plotOptions: {
+                    bar: {
+                        borderRadius: 10,
+                        dataLabels: {
+                            position: 'top'
+                        }
+                    }
+                }       
             },
             colors: ['#76C224'],
             dataLabels: {
-              enabled: false
-            },
-            stroke: {
-              curve: 'smooth',
-              colors: ['#76C224'],
-              width: 2
+              enabled: true,
+              formatter: function (val) {
+                  return val + "ml"
+              },
+              offsetY: 100,
+              style: {
+                  fontSize: '10px',
+                  colors: ['#76C224']
+              }
             },
             grid: {
               row: {
@@ -84,6 +88,20 @@ export const ApexChartActuators = () => {
               x: {
                 format: "HH:mm"
               }
+            },
+            yaxis: {
+                axisBorder: {
+                  show: false
+                },
+                axisTicks: {
+                  show: false,
+                },
+                labels: {
+                  show: false,
+                  formatter: function (val) {
+                    return val + "%";
+                  }
+                }
             }
   }) 
    
@@ -91,7 +109,7 @@ export const ApexChartActuators = () => {
       <Div>
         <ReactApexChart options={options} 
                         series={series} 
-                        type="area" 
+                        type="bar" 
                         height={'100%'} 
                         width={'100%'}
                         style={styles} />

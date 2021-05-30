@@ -3,6 +3,7 @@ import { Video } from './Video';
 import { Clock } from './Clock';
 import styled from 'styled-components';
 import img from './header-background2.jpg';
+import { FetchButton } from './FetchButton';
 
 
 const Headers = styled.div`
@@ -38,6 +39,7 @@ export const Header = () => {
             <Video />
             <Clock />           
             <H1>Hydroponic Project</H1>
+            <FetchButton />
         </Headers>              
       )
 }

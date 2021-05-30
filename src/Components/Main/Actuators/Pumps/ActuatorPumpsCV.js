@@ -8,30 +8,29 @@ const CVDiv = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 0.4rem;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(216,216,216,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 100%);
     border: 0.2rem solid #A0A0A0;
     padding: 0.5rem;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    `
-
-const H2 = styled.h2`
-    position: absolute;
-    font-size: 1.3rem;
-    top: 1%;
-    right: 1%;
     `
 
 const Purpose = styled.div`
-    font-size: 2.8rem;
-    color: #76C224;
-    font-weight: 500; 
+    margin-top: 0.2rem;
+    font-size: 1.1rem;
+    text-align: right;
     @media (min-width: 1900px) {
-        font-size: 3rem;
-    }
+        font-size: 1.8rem;
+    } 
     `
+
+const Img = styled.img`
+    width: 45%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+` 
 
 
 export const ActuatorPumpsCV = () => {
@@ -40,9 +39,9 @@ export const ActuatorPumpsCV = () => {
 
         <>
            {ActuatorPumpsCVData.map(data => {
-               return   <CVDiv style={{gridArea: data.gridArea}}>
-                            <H2>Dosing Pump</H2>
+               return   <CVDiv style={{gridArea: data.gridArea}}>                            
                             <Purpose>{data.purpose}</Purpose>
+                            <Img src={data.img}></Img>
                         </CVDiv>
               })
             }

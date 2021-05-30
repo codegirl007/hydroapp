@@ -1,4 +1,5 @@
-import React from 'react';
+import moment from 'moment';
+import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import styled from 'styled-components';
 
@@ -9,65 +10,87 @@ const Div = styled.div`
    margin: 0;
    border: 1px solid #888888;
    border-radius: 0.4rem;   
-   background-color: white    
+   background-color: white; 
 `
 
-export class ApexChartSensors extends React.Component {
-  constructor(props) {
-    super(props);
+const styles = {
+   position: 'absolute', 
+   bottom: '0', 
+   left:'0', 
+   right: '0'
+}
 
-    this.state = {
-    
-      series: [{
-          data: [19, 18, 20, 18, 20, 19, 18, 19, 19]
-      }],
-      options: {
-        chart: {
-          toolbar: {
-            show: false
-          },
-          animations: {
-            enabled: true,
-            easing: 'linear',
-            dynamicAnimation: {
-              speed: 1000
+export const ApexChartSensors = () => {
+  
+  const seriesArray = [
+    {
+      data: [
+        [1578265200000, 1],
+        [1578272400000, 2],
+        [1578279600000, 3],
+        [1578286800000, 4],
+        [1578294000000, 3],
+        [1578301200000, 2],
+        [1578308400000, 1],
+        [1578315600000, 0],
+        [1578322800000, 1],
+        [1578330000000, 1],
+        [1578337200000, 1],
+        [1578344400000, 1],
+        [1578351600000, 2]]
+      }
+  ]
+  
+  const [series, setSeries] = useState(seriesArray);
+  const [options, setOptions] = useState({
+            chart: {
+                toolbar: {
+                  show: false
+                },
+                type: 'line',
+                zoom: {
+                  enabled: true
+                },        
+            },
+            colors: ['#76C224'],
+            dataLabels: {
+              enabled: false
+            },
+            stroke: {
+              curve: 'smooth',
+              colors: ['#76C224'],
+              width: 2
+            },
+            grid: {
+              row: {
+                colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                opacity: 0.5
+              },
+            },
+            xaxis: {
+              type: "datetime",
+              labels: {
+                datetimeUTC: false
+              }
+            },
+            tooltip: {
+              x: {
+                format: "HH:mm"
+              }
             }
-          },
-          type: 'line',
-          zoom: {
-            enabled: false
-          },        
-        },
-        colors: ['#76C224'],
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth',
-          colors: ['#76C224'],
-          width: 2
-        },
-        grid: {
-          row: {
-            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-            opacity: 0.5
-          },
-        },
-        xaxis: {
-          categories: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00', '02:00'],
-        }
-      },
-    
-    
-    };
-  }
-
-  render() {
+            
+  }) 
+   
     return (
       <Div>
-        <ReactApexChart options={this.state.options} series={this.state.series} type="area" height={'80%'} width={'100%'} />
+        <ReactApexChart options={options} 
+                        series={series} 
+                        type="area" 
+                        height={'100%'} 
+                        width={'100%'}
+                        style={styles} />
       </Div>
     );
   }
-}
+
 
