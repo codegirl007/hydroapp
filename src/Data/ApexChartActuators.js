@@ -25,7 +25,7 @@ export const ApexChartActuators = () => {
   const seriesArray = [
     {
       data: [
-      [f, 1],
+      [1578265200000, 1],
       [1578272400000, 2],
       [1578279600000, 3],
       [1578286800000, 4],
