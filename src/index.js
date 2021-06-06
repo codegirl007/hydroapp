@@ -8,9 +8,9 @@ import * as AWS from 'aws-sdk';
 import { ConfigurationOptions } from 'aws-sdk';
 
 const configuration: ConfigurationOptions = {
-  region: 'YOUR_REGION',
-  secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
-  accessKeyId: 'YOUR_ACCESS_KEY_ID'
+  region: 'Europe (Frankfurt) Region',
+  secretAccessKey: 'fuQtewPgpjhaQllvTWaFIWJTQ6k9T3lLhg4vvQW7',
+  accessKeyId: 'AKIAVEVTCR4CWESXV3EK'
 }
 
 AWS.config.update(configuration)

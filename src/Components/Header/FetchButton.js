@@ -1,33 +1,52 @@
-import React from 'react';
-import { fetchData } from './AwsFunctions';
-import styled from 'styled-components';
-
-const Button = styled.button`
-    position: absolute;
-    right: 0.2%;
-    bottom: 1%;
-    font-size: 1.2rem;
-    padding: 0.3%;
-    border-radius: 0.4rem;
-    background-color: rgba(0,0,0, 0.7);
-    color: white;
-    cursor: pointer;
-    @media (min-width: 1900px) {
-    font-size: 0.7vw;
-    }
-`
-
-
+import React, { useState, useEffect } from "react";
 
 export const FetchButton = () => {
-  
-  const fetchDataFormDynamoDb = () => {
-    fetchData('users')
-  }
-  
-  return <>
-    <Button onClick={() => fetchDataFormDynamoDb()}> Fetch Data </Button>
-  </>
-}
+     const [data, setData] = useState();
+
+
+    useEffect(() => {
+    fetch("https://39mb4p87zf.execute-api.eu-central-1.amazonaws.com/items")
+    .then((response) => response.json())
+    .then((json) =>  {      
+      console.log(json);
+      setData(json);      
+     })
+    .catch((error) => console.log('Error while fetching:', error));
+  }, []);
+
+
+
+    // fetch("https://39mb4p87zf.execute-api.eu-central-1.amazonaws.com/items/sensor1")
+    //   .then((response) => response.json())
+    //   .then((json) => setData(json))
+    //   .catch((error) => console.log(error));
+
+    // fetch('http://localhost:3000/news.json')
+    // .then(serverResponse => serverResponse.text())
+    // .then(responseText => {
+    //   const data = JSON.parse(responseText);
+    //   carousel.populateNewsCarousel(data.articles);
+    // });
+
+    // ('API-URL', {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'x-api-key': 'API-KEY',
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     return data;
+    //   })
+
+  return (
+    <>
+      data
+    </>
+  );
+};
+
+
 
   

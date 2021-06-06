@@ -3,7 +3,7 @@
 export const ActuatorPumpsCVData = [
     {
       gridArea: '2/2/3/3',
-      purpose: 'pH',
+      purpose: 'pH_1',
       img: './icons/svg/ph.svg'
      },
      {
@@ -18,7 +18,7 @@ export const ActuatorPumpsCVData = [
      },
      {
       gridArea:'2/4/3/5',
-      purpose: 'pH',
+      purpose: 'pH_2',
       img: './icons/svg/ph.svg'
      },
      {

@@ -54,9 +54,7 @@ export const ApexChartPumps = () => {
                 plotOptions: {
                     bar: {
                         borderRadius: 10,
-                        dataLabels: {
-                            position: 'top'
-                        }
+                        
                     }
                 }       
             },
@@ -66,10 +64,10 @@ export const ApexChartPumps = () => {
               formatter: function (val) {
                   return val + "ml"
               },
-              offsetY: 100,
+              
               style: {
                   fontSize: '10px',
-                  colors: ['#76C224']
+                  colors: ['#686868']
               }
             },
             grid: {
