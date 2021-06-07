@@ -48,7 +48,7 @@ const Unit = styled.div`
 
 
 export const SensorCurrentValue = () => {
-
+    
     return (
         <>
            {SensorCVData.map(data => {
