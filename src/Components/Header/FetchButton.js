@@ -1,51 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useFetchStore, FetchData } from "../../Data/useFetchStore";
 
 export const FetchButton = () => {
-     const [data, setData] = useState();
+    
+      const { data } = useFetchStore();
+      
+      return (
+        <>
+          <FetchData />
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </>
+      );
+    }
 
-
-    useEffect(() => {
-    fetch("https://39mb4p87zf.execute-api.eu-central-1.amazonaws.com/items")
-    .then((response) => response.json())
-    .then((json) =>  {      
-      console.log(json);
-      setData(json);      
-     })
-    .catch((error) => console.log('Error while fetching:', error));
-  }, []);
-
-
-
-    // fetch("https://39mb4p87zf.execute-api.eu-central-1.amazonaws.com/items/sensor1")
-    //   .then((response) => response.json())
-    //   .then((json) => setData(json))
-    //   .catch((error) => console.log(error));
-
-    // fetch('http://localhost:3000/news.json')
-    // .then(serverResponse => serverResponse.text())
-    // .then(responseText => {
-    //   const data = JSON.parse(responseText);
-    //   carousel.populateNewsCarousel(data.articles);
-    // });
-
-    // ('API-URL', {
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'x-api-key': 'API-KEY',
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     return data;
-    //   })
-
-  return (
-    <>
-      data
-    </>
-  );
-};
 
 
 
