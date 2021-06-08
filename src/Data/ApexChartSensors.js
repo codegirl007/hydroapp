@@ -2,6 +2,7 @@ import moment from 'moment';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import styled from 'styled-components';
+import { useFetchStore } from './useFetchStore';
 
 const Div = styled.div`
    width: 100%;
@@ -21,7 +22,9 @@ const styles = {
 }
 
 export const ApexChartSensors = () => {
-  
+  const { data } = useFetchStore();
+
+
   const seriesArray = [
     {
       data: [

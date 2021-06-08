@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SensorCVData } from '../../../Data/SensorCVData';
 import { useFetchStore } from '../../../Data/useFetchStore';
 
 
@@ -46,7 +45,7 @@ const Value = styled.div`
     `
 const Unit = styled.div`   
     `  
-const grid = [];
+
 
 export const SensorCurrentValue = () => {
     const { data } = useFetchStore();
@@ -56,8 +55,8 @@ export const SensorCurrentValue = () => {
 
     return (
         <>  { data?.Items.map((device, index) => {
-             if ((device.id.startsWith('sensor'))){
-                return <CVDiv style={{gridArea: grid[index]}}>
+             if ((device.id.startsWith('sensor'))) {
+                return <CVDiv >
                             <H2>{device.type}</H2>
                             <Img src={`./icons/svg/${device.type}.svg`}></Img>  
                             <Wrapper>                          

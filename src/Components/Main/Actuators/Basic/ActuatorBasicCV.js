@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ActuatorBasicCVData } from '../../../../Data/ActuatorBasicCVData';
+import { useFetchStore } from '../../../../Data/useFetchStore';
 
 const CVDiv = styled.div`
     width: 100%;
@@ -43,21 +43,21 @@ const Number = styled.div`
 
 
 export const ActuatorBasicCV = () => {
-
+    const { data } = useFetchStore();
 
     return (
 
         <>
-           {ActuatorBasicCVData.map(data => {
-               return   <CVDiv style={{gridColumn: data.gridColumn, gridRow: data.gridRow}}>
-                            <Img src={data.image}></Img>
-                            <H2>{data.title}</H2>
-                            <Number>{data.number}</Number>
-                                                         
-                        </CVDiv>
-              })
-            }
-          
+           { data?.Items.map((device, index) => {
+             if ((device.id.startsWith('actuator'))) {
+                return <CVDiv >
+                        <Img src={`./icons/svg/${device.type}.svg`}></Img>  
+                               
+                                <H2>{device.type}</H2>
+                                <Number>{device.value}{device.unit}</Number>
+                               
+                       </CVDiv>
+}})}
         </>
       )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ActuatorPumpsCVData } from '../../../../Data/ActuatorPumpsCVData';
+import { useFetchStore } from '../../../../Data/useFetchStore';
 
 
 
@@ -34,17 +34,31 @@ const Img = styled.img`
 
 
 export const ActuatorPumpsCV = () => {
+    const { data } = useFetchStore();
 
     return (
 
         <>
-           {ActuatorPumpsCVData.map(data => {
-               return   <CVDiv style={{gridArea: data.gridArea}}>                            
-                            <Purpose>{data.purpose}</Purpose>
-                            <Img src={data.img}></Img>
-                        </CVDiv>
-              })
-            }
+           { data?.Items.map((device, index) => {
+             if ((device.id.startsWith('pump'))) {
+                return <CVDiv >
+                            <Purpose>{device.type}</Purpose>
+                            <Img src={`./icons/svg/${device.type}.svg`}></Img>  
+                                                     
+                                <div>{device.value}</div>
+                            
+                       </CVDiv>
+            }})}
+
+
+
+        {/* //    {ActuatorPumpsCVData.map(data => {
+        //        return   <CVDiv style={{gridArea: data.gridArea}}>                            
+        //                     <Purpose>{data.purpose}</Purpose>
+        //                     <Img src={data.img}></Img>
+        //                 </CVDiv>
+        //       })
+        //     } */}
           
         </>
       )

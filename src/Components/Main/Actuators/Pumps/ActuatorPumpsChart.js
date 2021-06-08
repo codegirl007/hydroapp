@@ -20,17 +20,17 @@ export const ActuatorPumpsChart = () => {
 
     return (
           <> 
-              <ApexChartPumps style={{gridArea:"2/1/3/2"}} />
+              <ApexChartPumps/>
            
-              <ApexChartPumps style={{gridArea:"3/1/4/2" }}/>
+              <ApexChartPumps/>
          
-              <ApexChartPumps style={{gridArea: "4/1/5/2"}}/>
+              <ApexChartPumps />
         
-              <ApexChartPumps style={{gridArea: "2/3/3/4" }}/>
+              <ApexChartPumps />
          
-              <ApexChartPumps style={{gridArea: "3/3/4/4" }}/>
+              <ApexChartPumps />
       
-              <ApexChartPumps style={{gridArea: "4/3/5/4" }}/>
+              <ApexChartPumps />
            
           </>
                  

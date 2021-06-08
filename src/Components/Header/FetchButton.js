@@ -11,7 +11,6 @@ export const FetchButton = () => {
       return (
         <>
           <FetchData />
-          <pre>{JSON.stringify(data, null, 2)}</pre>
         </>
       );
     }
